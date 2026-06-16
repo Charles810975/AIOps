@@ -1,7 +1,7 @@
 # Online Boutique 微服务部署、监控、测试与智能运维大作业
 本项目围绕 Google Online Boutique 微服务系统完成部署、监控、测试、故障注入、异常检测、根因分析和智能运维 Agent 实现。
 ## 目标档位
-第二档：自行选择更复杂的开源微服务系统进行部署、监控和维护。
+第三档：自行选择更复杂的开源微服务系统进行部署、监控和维护并开发两个新的微服务。
 本项目选择 Online Boutique，包含 frontend、cartservice、checkoutservice、productcatalogservice、paymentservice、shippingservice、recommendationservice、adservice、currencyservice、emailservice、redis-cart、loadgenerator 等服务。
 ## 论文复现
 1. KDD 2019 SR-CNN / Time-Series Anomaly Detection Service at Microsoft

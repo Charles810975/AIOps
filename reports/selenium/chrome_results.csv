@@ -1,0 +1,6 @@
+step,ok,elapsed_seconds,error,screenshot
+open_home,True,0.6647892999462783,,reports\selenium\screenshots\01_open_home.png
+browse_product_detail,True,0.49719229992479086,,reports\selenium\screenshots\02_browse_product_detail.png
+add_product_to_cart,True,1.19802219979465,,reports\selenium\screenshots\03_add_product_to_cart.png
+open_cart,True,0.08375310013070703,,reports\selenium\screenshots\04_open_cart.png
+checkout_or_submit_order,True,3.517535600112751,,reports\selenium\screenshots\05_checkout_or_submit_order.png

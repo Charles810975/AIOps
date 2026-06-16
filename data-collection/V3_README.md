@@ -38,7 +38,6 @@ kubectl port-forward -n monitoring svc/prometheus-kube-prometheus-stack-promethe
 ### 3. 跑全部 4 个场景（不评估，只采集）
 
 ```powershell
-cd D:\刘从睿\软件测试与维护\Final
 python data-collection/collect_v3_faults.py --fault all --no-eval
 ```
 

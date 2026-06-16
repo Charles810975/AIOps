@@ -1,0 +1,14 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: net-payment-blackhole
+  namespace: chaos-mesh
+spec:
+  action: blackhole
+  mode: one
+  selector:
+    namespaces: [online-boutique]
+    labelSelectors:
+      app: paymentservice
+  direction: from
+  duration: "3m"

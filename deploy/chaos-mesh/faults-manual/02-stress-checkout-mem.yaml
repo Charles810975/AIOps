@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: stress-checkout-mem-strong
+  namespace: chaos-mesh
+spec:
+  mode: one
+  selector:
+    namespaces: [online-boutique]
+    labelSelectors:
+      app: checkoutservice
+  stressors:
+    memory:
+      workers: 2
+      size: "1500M"
+  duration: "8m"

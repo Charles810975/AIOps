@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: online-boutique-pods
+  namespace: monitoring
+  labels:
+    release: kube-prometheus-stack
+spec:
+  namespaceSelector:
+    matchNames:
+      - online-boutique
+  selector:
+    matchExpressions:
+      - key: app
+        operator: Exists
+  podMetricsEndpoints:
+    - port: metrics
+      interval: 15s
+      path: /metrics

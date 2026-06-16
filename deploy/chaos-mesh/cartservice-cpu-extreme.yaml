@@ -1,0 +1,17 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: cartservice-cpu-extreme
+  namespace: online-boutique
+spec:
+  mode: one
+  selector:
+    namespaces:
+      - online-boutique
+    labelSelectors:
+      app: cartservice
+  stressors:
+    cpu:
+      workers: 4       # 全部4核
+      load: 100        # 100% 满载
+  duration: "35m"     # 覆盖整个30分钟采集窗口 + 5分钟缓冲

@@ -1,0 +1,17 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: cartservice-cpu-v3-burst
+  namespace: online-boutique
+spec:
+  mode: one
+  selector:
+    namespaces:
+      - online-boutique
+    labelSelectors:
+      app: cartservice
+  stressors:
+    cpu:
+      workers: 4
+      load: 100        # 4 worker x 100% = 直接 4 核满载，远超 pod 的 cpu_limit (300m)
+  duration: "35m"

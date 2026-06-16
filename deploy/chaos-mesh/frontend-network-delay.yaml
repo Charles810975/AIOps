@@ -1,0 +1,18 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: frontend-network-delay
+  namespace: online-boutique
+spec:
+  action: delay
+  mode: one
+  selector:
+    namespaces:
+      - online-boutique
+    labelSelectors:
+      app: frontend
+  delay:
+    latency: "2000ms"
+    correlation: "0"
+    jitter: "0ms"
+  duration: "15m"

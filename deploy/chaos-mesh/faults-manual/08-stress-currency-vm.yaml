@@ -1,0 +1,17 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: stress-currency-vm
+  namespace: chaos-mesh
+spec:
+  mode: one
+  selector:
+    namespaces: [online-boutique]
+    labelSelectors:
+      app: currencyservice
+  stressors:
+    vm:
+      workers: 2
+      size: "800M"
+      rate: 200
+  duration: "5m"

@@ -1,0 +1,17 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: cartservice-memory-leak
+  namespace: online-boutique
+spec:
+  mode: one
+  selector:
+    namespaces:
+      - online-boutique
+    labelSelectors:
+      app: cartservice
+  stressors:
+    memory:
+      workers: 2
+      size: "1G"        # 持续申请1GB内存（容器内存limit通常是几百MB，会被OOM kill）
+  duration: "10m"

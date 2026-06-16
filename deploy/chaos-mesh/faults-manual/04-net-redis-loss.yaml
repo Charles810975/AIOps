@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: net-redis-loss
+  namespace: chaos-mesh
+spec:
+  action: loss
+  mode: one
+  selector:
+    namespaces: [online-boutique]
+    labelSelectors:
+      app: redis-cart
+  loss:
+    loss: "50"
+    correlation: "100"
+  duration: "5m"

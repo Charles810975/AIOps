@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: stress-cart-cpu-max
+  namespace: chaos-mesh
+spec:
+  mode: one
+  selector:
+    namespaces: [online-boutique]
+    labelSelectors:
+      app: cartservice
+  stressors:
+    cpu:
+      workers: 8
+      load: 100
+  duration: "10m"

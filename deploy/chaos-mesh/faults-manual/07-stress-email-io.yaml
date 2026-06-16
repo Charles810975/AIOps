@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: stress-email-io
+  namespace: chaos-mesh
+spec:
+  mode: one
+  selector:
+    namespaces: [online-boutique]
+    labelSelectors:
+      app: emailservice
+  stressors:
+    disk:
+      workers: 2
+      size: "200M"
+  duration: "5m"

@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: online-boutique-dashboard
+  namespace: monitoring
+  labels:
+    grafana_dashboard: "1"
+data:
+  online-boutique-dashboard.json: |
+    {
+      "title": "Online Boutique Observability",
+      "schemaVersion": 38,
+      "version": 1,
+      "refresh": "10s",
+      "panels": [
+        {
+          "type": "timeseries",
+          "title": "Pod CPU Usage",
+          "gridPos": {"x":0,"y":0,"w":12,"h":8},
+          "targets": [{"expr":"sum(rate(container_cpu_usage_seconds_total{namespace=\"online-boutique\",container!=\"\"}[1m])) by (pod)","legendFormat":"{{pod}}"}]
+        },
+        {
+          "type": "timeseries",
+          "title": "Pod Memory Usage",
+          "gridPos": {"x":12,"y":0,"w":12,"h":8},
+          "targets": [{"expr":"sum(container_memory_working_set_bytes{namespace=\"online-boutique\",container!=\"\"}) by (pod)","legendFormat":"{{pod}}"}]
+        },
+        {
+          "type": "timeseries",
+          "title": "Pod Restart Count",
+          "gridPos": {"x":0,"y":8,"w":12,"h":8},
+          "targets": [{"expr":"sum(kube_pod_container_status_restarts_total{namespace=\"online-boutique\"}) by (pod)","legendFormat":"{{pod}}"}]
+        },
+        {
+          "type": "timeseries",
+          "title": "Network Receive Rate",
+          "gridPos": {"x":12,"y":8,"w":12,"h":8},
+          "targets": [{"expr":"sum(rate(container_network_receive_bytes_total{namespace=\"online-boutique\"}[1m])) by (pod)","legendFormat":"{{pod}}"}]
+        }
+      ]
+    }

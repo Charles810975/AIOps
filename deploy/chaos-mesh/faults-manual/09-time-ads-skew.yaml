@@ -1,0 +1,14 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: TimeChaos
+metadata:
+  name: time-clock-skew-ads
+  namespace: chaos-mesh
+spec:
+  mode: one
+  selector:
+    namespaces: [online-boutique]
+    labelSelectors:
+      app: adservice
+  timeOffset: "-30m"
+  clockIds: ["CLOCK_REALTIME"]
+  duration: "5m"

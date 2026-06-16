@@ -45,10 +45,6 @@ agent/
 ├── test_agnes.py      # 验证 Agnes 联通 + model 列表
 └── test_agnes_toolcalls.py # 验证 function calling 支持
 
-docs/screenshots/
-├── S1-baseline.md / .txt   # 场景 1 完整 trace
-├── S2-anomaly.md / .txt    # 场景 2 完整 trace
-└── S3-selfheal.md / .txt   # 场景 3 完整 trace
 ```
 
 ---

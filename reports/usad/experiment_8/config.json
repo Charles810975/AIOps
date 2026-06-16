@@ -1,0 +1,9 @@
+{
+  "K": 2,
+  "latent": 32,
+  "epochs": 200,
+  "features": [
+    "cpu_usage",
+    "cpu_throttle_ratio"
+  ]
+}

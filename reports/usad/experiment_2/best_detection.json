@@ -1,0 +1,14 @@
+{
+  "best_f1": 0.464516,
+  "best_precision": 1.0,
+  "best_recall": 0.302521,
+  "best_alpha": 0.0,
+  "best_beta": 1.0,
+  "best_quantile": 0.7,
+  "best_threshold": 0.04431498050689697,
+  "TP": 72,
+  "FP": 0,
+  "FN": 166,
+  "total_windows": 238,
+  "anomaly_windows": 238
+}

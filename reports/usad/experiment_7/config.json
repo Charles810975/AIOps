@@ -1,0 +1,6 @@
+{
+  "window_size": 2,
+  "n_features": 16,
+  "latent_dim": 64,
+  "epochs": 100
+}

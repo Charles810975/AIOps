@@ -1,0 +1,13 @@
+{
+  "K": 2,
+  "STEP": 5,
+  "FAULT_THRESHOLD": 0.05,
+  "normal_baseline_start_ts": 1781355323,
+  "normal_baseline_end_ts": 1781355363,
+  "anomaly_start_ts": 1781355368,
+  "anomaly_end_ts": 1781355408,
+  "n_normal_windows": 457,
+  "n_anomaly_windows": 24,
+  "anomaly_window_rate": 0.0498960498960499,
+  "signal_ratio_throttle": 333333333.3333333
+}

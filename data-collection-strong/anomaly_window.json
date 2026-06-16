@@ -1,0 +1,9 @@
+{
+  "anomaly_start": 1781355368,
+  "anomaly_end": 1781355408,
+  "anomaly_duration_sec": 40,
+  "n_anomaly_points": 9,
+  "baseline_start": 1781355323,
+  "baseline_end": 1781355363,
+  "n_baseline_points": 9
+}

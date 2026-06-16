@@ -1,25 +1,15 @@
-# AIOps Agent（南开 Agnes 全模态 LLM 驱动）
+# AIOps Agent（ Agnes 全模态 LLM 驱动）
 
 最小闭环 AIOps 自愈 Agent。**目标：用 v3 训练好的 SR-CNN 检测器 + Agnes 全模态 LLM 做 ReAct 推理，对 K8s pod 异常进行检测 → 诊断 → 自愈。**
 
 ---
 
-## 🎬 一键看 3 个场景
+## 🎬 一键部署
 
 ```bash
-cd d:\刘从睿\软件测试与维护\Final\agent
-py demo.py
+py monitor.py
 ```
-
-会跑 3 个 ReAct 场景（约 1 分钟），并把完整 trace 写到 `docs/screenshots/`：
-
-| 场景 | 输入 | 期望行为 |
-|---|---|---|
-| **S1 baseline** | 正常 CPU 巡检 | 主动调 sr_detect → is_anomaly=false → 结论"无需操作" |
-| **S2 anomaly** | 检测到 CPU 异常 | detect → get_logs（看到 goroutine leak）→ get_pod_status → **restart_pod** |
-| **S3 self-heal** | 持续 5 分钟 CPU > 95% + OOM | detect → get_logs（看到 OOMKilled）→ **restart_pod 立即自愈** |
-
-每个场景都真实调用 Agnes LLM（`agnes-2.0-flash`），不是 Mock。
+每隔五秒轮询
 
 ---
 
@@ -101,30 +91,6 @@ py test_agnes_toolcalls.py
 **真实动作**：restart_pod 在 S2/S3 里**真的删过 cartservice pod**，Deployment 自动重建。
 可以用 `kubectl get pods -n online-boutique -l app=cartservice` 看到 pod 名变化。
 
----
-
-## 📊 截图场景速览
-
-### S1 baseline（正常）
-- sr_detect score=0.001, severity=ok
-- Agent **主动**判定无需操作
-- trace steps: 5
-
-### S2 anomaly（异常）
-- sr_detect score=0.471, severity=anomaly
-- get_logs 看到 `goroutine leak detected, count=2417`
-- get_pod_status 确认 Running
-- **restart_pod 成功删除 pod** → K8s 重建
-- trace steps: 14
-
-### S3 self-heal（自愈）
-- sr_detect score=0.978, severity=critical
-- get_logs 看到 `OOMKilled by kubelet`, `GC pause 4.2s`
-- **立即 restart_pod 自愈**
-- 给出 3 条后续建议（扩容 / 代码排查 / 监控）
-- trace steps: 11
-
----
 
 ## 🔑 Agnes API 接入要点
 

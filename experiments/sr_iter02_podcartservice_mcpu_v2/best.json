@@ -1,0 +1,23 @@
+{
+  "iter": 2,
+  "tag": "sr_iter02_podcartservice_mcpu_v2",
+  "data_csv": "D:\\刘从睿\\软件测试与维护\\Final\\data-collection-strong\\combined_cartservice-cpu-extreme-corrected.csv",
+  "n_total": 482,
+  "n_normal_auto": 471,
+  "n_anomaly_auto": 11,
+  "vmax": 0.0131063752129588,
+  "threshold_50pct_max": 0.0065531876064794,
+  "amp_window": 9,
+  "score_window": 41,
+  "diff_order": 2,
+  "smooth": 0,
+  "quantile": 0.98,
+  "threshold": 2.7911953293786844,
+  "precision": 0.6,
+  "recall": 0.5454545454545454,
+  "f1": 0.5714285714285713,
+  "TP": 6,
+  "FP": 4,
+  "FN": 5,
+  "elapsed_sec": 1.06
+}

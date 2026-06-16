@@ -1,0 +1,24 @@
+{
+  "iter": 1,
+  "tag": "iter01_w24_l32_d1_e50_history",
+  "hyperparams": {
+    "window_size": 24,
+    "latent_dim": 32,
+    "epochs": 50,
+    "batch_size": 64,
+    "downsample": 1
+  },
+  "f1": 0.5333333333333333,
+  "precision": 1.0,
+  "recall": 0.36363636363636365,
+  "alpha": 0.0,
+  "quantile": 0.8,
+  "threshold": 9014.3828125,
+  "TP": 44,
+  "FP": 0,
+  "FN": 77,
+  "train_time_sec": 2.508385181427002,
+  "n_train": 98,
+  "n_test": 219,
+  "anomaly_ratio": 0.5525114155251142
+}

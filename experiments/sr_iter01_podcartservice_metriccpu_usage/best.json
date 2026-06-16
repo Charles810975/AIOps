@@ -1,0 +1,17 @@
+{
+  "iter": 1,
+  "tag": "sr_iter01_podcartservice_metriccpu_usage",
+  "amp_window": 9,
+  "score_window": 31,
+  "quantile": 0.92,
+  "threshold": 1.518397711687915,
+  "precision": 0.23076923076923078,
+  "recall": 0.2647058823529412,
+  "f1": 0.24657534246575344,
+  "TP": 9,
+  "FP": 30,
+  "FN": 25,
+  "n_total": 482,
+  "n_anomaly": 34,
+  "elapsed_sec": 0.19
+}

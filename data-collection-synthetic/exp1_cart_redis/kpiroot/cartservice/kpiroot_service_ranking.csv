@@ -1,0 +1,12 @@
+pod,root_score
+redis-cart-6f887989c8-s4r67,0.5231
+checkoutservice-5fcbc94d48-c8mxz,0.5101
+cartservice-77f8cfdff-4gflb,0.3387
+emailservice-5c4564f4db-c9pjv,0.1455
+adservice-7c8b9f944-b7rfw,0.1216
+productcatalogservice-59867cb94d-gjfzt,0.1175
+frontend-fc6b4bb46-wwx7m,0.1121
+currencyservice-7c5c4ccd64-8zv72,0.1106
+paymentservice-858d7c66fd-pwd9m,0.1096
+shippingservice-3f4d5e6f78-hj2kx,0.1087
+recommendationservice-9c8dd7cd6-f6x7c,0.107

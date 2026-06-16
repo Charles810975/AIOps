@@ -1,0 +1,2 @@
+F1_Score,Precision,Recall,Threshold,TP,FP,FN
+0.5217,0.3529,1.0,0.3363,6,11,0

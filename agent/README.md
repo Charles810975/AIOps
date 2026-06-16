@@ -38,7 +38,7 @@ agent/
 ├── detector.py        # v3 SR-CNN detector（severity 评分）
 ├── tools.py           # 4 工具：sr_detect / get_logs / restart_pod / get_pod_status
 ├── aiops_agent.py     # ReAct 循环（独立命令行版）
-├── monitor.py         # 5s 轮询 monitor（demo 路径）
+├── monitor.py         # 5s 轮询 monitor
 ├── demo.py            # ⭐ 一键跑 3 场景 + 写截图
 ├── fault_inject.py    # 故障注入（CPU 压测）
 ├── capture_screenshots.py  # 截图采集（旧版）
